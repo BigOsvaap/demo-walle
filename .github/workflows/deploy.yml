@@ -3,7 +3,6 @@ on: push
 
 jobs:
   custom-deploy:
-    needs: heroku-deploy
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
