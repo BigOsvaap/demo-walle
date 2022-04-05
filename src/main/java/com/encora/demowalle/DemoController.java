@@ -13,21 +13,7 @@ public class DemoController {
         return new ResponseEntity<>(new DemoDTO("Hello!"), HttpStatus.OK);
     }
 
-    private static class DemoDTO {
 
-        private String message;
-
-        public DemoDTO(String message) {
-            this.message = message;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-    }
 
 }
+

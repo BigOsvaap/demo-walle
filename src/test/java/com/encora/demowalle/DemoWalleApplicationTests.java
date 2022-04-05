@@ -1,13 +1,21 @@
 package com.encora.demowalle;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class DemoWalleApplicationTests {
 
+    @Autowired
+    private TestRestTemplate restTemplate;
+
     @Test
-    void contextLoads() {
+    void correctMessage(){
+        DemoDTO body = restTemplate.getForObject("/api", DemoDTO.class);
+        Assertions.assertEquals(body.getMessage(), "Hello!");
     }
 
 }
