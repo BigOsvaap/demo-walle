@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class DemoWalleApplicationTests {
+class DemoWalleApplicationTests extends PostgresDbTestContainer{
 
     @Autowired
     private TestRestTemplate restTemplate;
